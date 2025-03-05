@@ -3,11 +3,14 @@
 import React from 'react';
 import Image from 'next/image'
 import { motion } from "framer-motion"
-import Link from 'next/link';
+
 
 import profilephoto from "@/public/profilephoto.jpg";
+import { importantLinks } from '@/lib/data';
+
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SiReaddotcv } from "react-icons/si";
+import { INTRO_TEXT } from '@/lib/sectiondata';
 
 export default function Intro() {
     return (
@@ -48,27 +51,37 @@ export default function Intro() {
                 </div>
 
             </div>
-            <motion.p className='mb-10 mt-4 px-4 font-medium text-2xl !leading-[1.5] sm:text-4xl' 
+            <motion.h1 className='mb-10 mt-4 px-4 font-medium text-2xl !leading-[1.5] sm:text-4xl' 
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hello, I'm Saket.</span> I'm a{" "}
-                <span className="font-bold">full-stack engineer</span> with{" "}
-                <span className="font-bold">3 years</span> of experience. I enjoy
-                building <span className="italic">sites & apps</span>. My focus is{" "}
-                <span className="underline">React, Python (FastAPI) and AWS</span>.
-            </motion.p>
-            <div className="flex items-center justify-center">
-                <Link href="https://github.com/saketdixit" className="px-4">
+                {INTRO_TEXT}
+
+            </motion.h1>
+            <motion.div className="flex items-center justify-center text-lg font-medium gap-3"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                delay: 0.1
+            }}
+            >
+                <a href={importantLinks.GitHub} target="_blank" className="bg-white rounded-full p-4 outline-none border border-black/10 
+                // focus:scale-100 hover:scale-110 active:scale-105 transition">
                     <FaGithub className="h-8 w-8" />
-                </Link>
-                <Link href="https://www.linkedin.com/in/saketdixit/" className="px-4">
+                </a>
+                <a href={importantLinks.Linkedin} target="_blank" className="bg-white rounded-full p-4 outline-none border border-black/10
+                // focus:scale-100 hover:scale-110 active:scale-105 transition">
                     <FaLinkedin className='h-8 w-8' />
-                </Link>
-                <Link href="https://drive.google.com/file/d/15JQPjdxOCWLLVX88rGhUnU71ONTIsrAn/view?usp=sharing" className='px-4'>
+                </a>
+                <a href={importantLinks.Resume} target="_blank" className="bg-white rounded-full p-4 outline-none border border-black/10
+                // focus:scale-100 hover:scale-110 active:scale-105 transition">
                     <SiReaddotcv className='h-8 w-8' />
-                </Link>            
-            </div>
+                </a> 
+                {/* <a href="/CV.pdf" download className="bg-white rounded-full p-4 outline-none border-black/10
+                // focus:scale-100 hover:scale-110 active:scale-105 transition">
+                    <SiReaddotcv className='h-8 w-8' />
+                </a>            */}
+            </motion.div>
         </section>
     );
 }

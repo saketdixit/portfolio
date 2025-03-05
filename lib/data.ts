@@ -33,6 +33,13 @@ export const links = [
   // },
 ] as const;
 
+
+export const importantLinks = {
+  Linkedin: "https://www.linkedin.com/in/saketdixit/",
+  GitHub: "https://github.com/saketdixit",
+  Resume: "https://drive.google.com/file/d/15JQPjdxOCWLLVX88rGhUnU71ONTIsrAn/view?usp=sharing"
+} as const;
+
 export const experiencesData = [
   {
     title: "Bachelors in Computer Science",
