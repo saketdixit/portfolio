@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image'
 import { motion } from "framer-motion"
 
@@ -11,10 +11,26 @@ import { importantLinks } from '@/lib/data';
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SiReaddotcv } from "react-icons/si";
 import { INTRO_TEXT } from '@/lib/sectiondata';
+import { useActiveSectionContext } from '@/context/active-section-context';
+import { useInView } from 'react-intersection-observer';
 
 export default function Intro() {
+    const {ref, inView} = useInView({
+        threshold: 0.5
+    });
+    
+    const {setActiveSection, timeOfLastClick} = useActiveSectionContext();
+    
+        useEffect(() => {
+            if(inView && Date.now() - timeOfLastClick > 1500) {
+                setActiveSection("Home")
+            }
+        }, [inView, setActiveSection, timeOfLastClick] );
+    
     return (
-        <section id="home"
+        <section
+        ref = {ref}
+        id="home"
         className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-100'>
             <div className='flex items-center justify-center'>
                 <div className='relative'>
