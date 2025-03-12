@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function Header() {
-    const { activeSection, setActiveSection, timeOfLastClick, setTimeOfLastClick } = useActiveSectionContext();
+    const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
     
     return <header className='z-[999] relative'>
         <motion.div className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none 
