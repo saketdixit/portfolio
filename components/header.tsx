@@ -24,7 +24,8 @@ export default function Header() {
             <ul className='flex w-[22rem] flex-wrap
             items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500
             sm:w-[initial] sm:flex-nowrap sm:gap-5'>
-                {links.map((link) => (
+                {
+                links.map((link) => (
                     <motion.li className="h-3/4 flex items-center justify-center relative
                    "
                     initial = {{y: -100, opacity: 0}}
@@ -32,7 +33,7 @@ export default function Header() {
                     key={link.hash}
                     >
                         <Link className={clsx("flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
-                        {"  text-gray-950 dark:text-gray-200" : activeSection === link.name,}
+                        {"text-gray-950 dark:text-gray-200" : activeSection === link.name,}
                         )} 
                         href ={link.hash}
                         onClick={() => {

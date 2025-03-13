@@ -2,6 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { SiReaddotcv } from "react-icons/si";
 
 import corpcommentImg from "@/public/profilephoto.jpg"; //Change these to match projects
 import rmtdevImg from "@/public/profilephoto.jpg";
@@ -28,18 +30,23 @@ export const links = [
     name: "Experience",
     hash: "#experience",
   },
-  // {
-  //   name: "Contact",
-  //   hash: "#contact",
-  // },
 ] as const;
 
 
-export const importantLinks = {
-  Linkedin: "https://www.linkedin.com/in/saketdixit/",
-  GitHub: "https://github.com/saketdixit",
-  Resume: "https://drive.google.com/file/d/15JQPjdxOCWLLVX88rGhUnU71ONTIsrAn/view?usp=sharing"
-} as const;
+export const importantLinks = [
+  {
+    link: "https://github.com/saketdixit",
+    Icon: FaGithub,
+  },
+  {
+    link: "https://www.linkedin.com/in/saketdixit/", 
+    Icon: FaLinkedin,
+  },
+  {
+    link: "https://drive.google.com/file/d/15JQPjdxOCWLLVX88rGhUnU71ONTIsrAn/view?usp=sharing",
+    Icon: SiReaddotcv,
+  }
+] as const;
 
 export const experiencesData = [
   {
@@ -54,17 +61,41 @@ export const experiencesData = [
     title: "Software Developer",
     location: "Pune, India",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I worked as a front-end developer for about 2 years at a startup. The stack was PHP, Yii2, Javascript, MySQL and occasional Python",
     icon: React.createElement(CgWorkAlt),
     date: "2019 - 2021",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Masters in Computer Science",
+    location: "New York, USA",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Graduated with a 3.6 GPA",
+    icon: React.createElement(LuGraduationCap),
+    date: "2021 - 2023",
+  },
+  {
+    title: "Data Analyst (Volunteer)",
+    location: "Seattle, USA",
+    description:
+      "While looking for a job, I worked part time at an org named Harvard in Tech. Used NoSQL, Tableau, Excel and Python",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2023",
+  },
+  {
+    title: "Data Engineer (Volunteer)",
+    location: "Seattle, USA",
+    description:
+      "My team split for the previous role and we were roped into a new org named Fact Finders Pro. I worked here to scrape data from various sources and prepare it for modelling. We also used LLMs and NLP routines.",
+    icon: React.createElement(FaReact),
+    date: "2024",
+  },
+  {
+    title: "Software Engineer",
+    location: "New Jersey, USA",
+    description:
+      "I joined a firm specializing in creating emdedded systems and IoT devices for security applications. Some Technologies I used were Python, Flask, Embedded-C, SDCC and MySQL",
+    icon: React.createElement(FaReact),
+    date: "2024 - Present",
   },
 ] as const;
 
@@ -93,23 +124,24 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
+  "Python",
+  "C++",
+  "Java",
   "HTML",
   "CSS",
   "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
-  "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
+  "MySQL",
   "MongoDB",
-  "Redux",
+  "RESTAPI",
+  "Flask",
+  "Spring Boot",
   "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  "AWS",
+  "NLP"
 ] as const;

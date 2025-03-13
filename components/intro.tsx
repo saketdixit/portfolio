@@ -8,8 +8,7 @@ import { motion } from "framer-motion"
 import profilephoto from "@/public/profilephoto.jpg";
 import { importantLinks } from '@/lib/data';
 
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { SiReaddotcv } from "react-icons/si";
+
 import { INTRO_TEXT } from '@/lib/sectiondata';
 import { useSectionInView } from '@/lib/hooks';
 
@@ -71,22 +70,15 @@ export default function Intro() {
                 delay: 0.1
             }}
             >
-                <a href={importantLinks.GitHub} target="_blank" className="bg-white rounded-full p-4 outline-none borderBlack 
-                // focus:scale-100 hover:scale-110 active:scale-105 transition dark:bg-white/10">
-                    <FaGithub className="h-8 w-8" />
-                </a>
-                <a href={importantLinks.Linkedin} target="_blank" className="bg-white rounded-full p-4 outline-none borderBlack
-                // focus:scale-100 hover:scale-110 active:scale-105 transition dark:bg-white/10">
-                    <FaLinkedin className='h-8 w-8' />
-                </a>
-                <a href={importantLinks.Resume} target="_blank" className="bg-white rounded-full p-4 outline-none borderBlack
-                // focus:scale-100 hover:scale-110 active:scale-105 transition dark:bg-white/10">
-                    <SiReaddotcv className='h-8 w-8' />
-                </a> 
-                {/* <a href="/CV.pdf" download className="bg-white rounded-full p-4 outline-none border-black/10
-                // focus:scale-100 hover:scale-110 active:scale-105 transition">
-                    <SiReaddotcv className='h-8 w-8' />
-                </a>            */}
+                {
+                    importantLinks.map((impLinks, index) => (
+                        <a key = {index} href={impLinks.link} target="_blank" className="bg-white rounded-full p-4 outline-none borderBlack 
+                    //  hover:scale-110 active:scale-105 transition dark:bg-white/10 ">
+                        <impLinks.Icon className="h-8 w-8" />
+                        </a>
+                    ))
+                }
+                
             </motion.div>
         </section>
     );
