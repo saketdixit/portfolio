@@ -1,13 +1,14 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { SiReaddotcv } from "react-icons/si";
 
-import corpcommentImg from "@/public/profilephoto.jpg"; //Change these to match projects
-import rmtdevImg from "@/public/profilephoto.jpg";
-import wordanalyticsImg from "@/public/profilephoto.jpg";
+import { CgWorkAlt } from "react-icons/cg";
+import { LuGraduationCap } from "react-icons/lu";
+import { FaGithub, FaLinkedin , FaMicrochip} from "react-icons/fa6";
+import { SiReaddotcv } from "react-icons/si";
+import { DiGoogleAnalytics } from "react-icons/di";
+
+
+import projectImage from "@/public/temporarily-unavailable-pic.webp"; //I have to rebuild these projects and take screenshots
+
 
 export const links = [
   {
@@ -78,7 +79,7 @@ export const experiencesData = [
     location: "Seattle, USA",
     description:
       "While looking for a job, I worked part time at an org named Harvard in Tech. Used NoSQL, Tableau, Excel and Python",
-    icon: React.createElement(FaReact),
+    icon: React.createElement(DiGoogleAnalytics),
     date: "2023",
   },
   {
@@ -86,41 +87,84 @@ export const experiencesData = [
     location: "Seattle, USA",
     description:
       "My team split for the previous role and we were roped into a new org named Fact Finders Pro. I worked here to scrape data from various sources and prepare it for modelling. We also used LLMs and NLP routines.",
-    icon: React.createElement(FaReact),
+    icon: React.createElement(CgWorkAlt),
     date: "2024",
   },
   {
     title: "Software Engineer",
     location: "New Jersey, USA",
     description:
-      "I joined a firm specializing in creating emdedded systems and IoT devices for security applications. Some Technologies I used were Python, Flask, Embedded-C, SDCC and MySQL",
-    icon: React.createElement(FaReact),
+      "I joined a firm specializing in creating emdedded systems and IoT devices for security applications. Some technologies I used were Python, Flask, Embedded-C, SDCC and MySQL",
+    icon: React.createElement(FaMicrochip),
     date: "2024 - Present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Car-Dealership Fleet-Tracker",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "Created a web app prototype to showcase how asset deliveries/transportation could be tracked securely",
+    tags: ["Java", "Firebase", "MySQL", "Android Studio"],
+    imageUrl: projectImage,
   },
   {
-    title: "rmtDev",
+    title: "Webscraper & Asset price suggestion system",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+      "Created a webscraper to get data for various grocery items based on public apis, updated daily",
+    tags: ["Python", "Selenium", "MS Excel"],
+    imageUrl: projectImage,
+  },
+  {
+    title: "Web Admin Application",
+    description:
+      "Various functions like changing of prices, updating the site, managing orders on the app could be done using the web application",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+    imageUrl: projectImage,
   },
   {
-    title: "Word Analytics",
+    title: "Covid-19 Detection using CT-scans",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "Few-shot learning can extract features with very few training CT-scans, making it great for covid detection",
+    tags: ["Python", "Tensorflow", "Deep CNN", "Tableau"],
+    imageUrl: projectImage,
   },
+  {
+    title: "Heart disease prediction using ML",
+    description:
+      "We implemented models with Decision trees, Random Forest, K-Nearest Neighbours, Linear SVM and compared them side-by-side",
+    tags: ["Python", "Plotly","Numpy", "Pandas", "Vercel"],
+    imageUrl: projectImage,
+  },
+  {
+    title: "Classification in Imbalanced datasets",
+    description:
+      "Researched and tested this new algorithm to improve accuracy on an imbalanced variation of the MNIST dataset",
+    tags: ["Python", "Tensorflow","Numpy", "Pandas","Scikit"],
+    imageUrl: projectImage,
+  },
+  {
+    title: "Text chat application over network using C",
+    description:
+      "Created an application to run a text chat application running over a server and multiple clients, with network sockets, text and multimedia messages",
+    tags: ["C"],
+    imageUrl: projectImage,
+  },
+  {
+    title: "Indoor GPS using BLE Beacons",
+    description:
+      "Implemented a system where a user would connect to nearby beacons and then enter a destination to get directions from current location",
+    tags: ["Java", "Google Map API", "JSON"],
+    imageUrl: projectImage,
+  },
+  {
+    title: "Restaurant Companion App",
+    description:
+      "Set up an environment so that user could book seats at the restaurant and order starters before they arrived",
+    tags: ["Java", "Firebase", "MySQL", "Android Studio"],
+    imageUrl: projectImage,
+  },
+  
 ] as const;
 
 export const skillsData = [

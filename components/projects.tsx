@@ -10,7 +10,7 @@ import { useSectionInView } from '@/lib/hooks';
 
 
 export default function Projects() {
-    const { ref } = useSectionInView("Projects", 0.5);
+    const { ref } = useSectionInView("Projects", 0.2); //Based on size of the section (number of projects) the threshold value here must be smaller/larger
 
     return (
         <section className = "scroll-mt-28 mb-28" id="projects"
